@@ -1,0 +1,71 @@
+@startuml login-states
+hide empty description
+
+[*] --> Login_Screen
+Login_Screen : do: input login credentials
+
+Login_Screen --> Login_Manager
+note left on link
+    Login Credentials
+end note
+
+state "SSO or In-House Login" as Login_Manager {
+    Credentials_Verifier : do: 
+    Credentials_Verifier : validate login credentials
+    ' Credentials_Verifier --> Login
+    ' note on link
+    '     Response
+    ' end note
+
+    Credentials_Verifier --> Authorization
+    ' note on link
+    '     Valid Login Credentials
+    ' end note
+
+    Authorization : do: 
+    Authorization : query database for Authorization
+
+    Authorization --> Faculty_Info_DB
+    Faculty_Info_DB --> Authorization
+
+    Authorization --> Credentials_Verifier
+    ' note on link
+    '     Response
+    ' end note
+}
+
+note bottom of Login_Manager
+    The exposed states are if
+    we choose an In-House approach
+end note
+
+Login_Manager --> Login_Screen
+note on link
+    Response
+end note
+
+Login_Screen --> Login_Screen
+note on link
+    Error: Invalid Login Credentials OR
+    Error: Invalid Authorization
+end note
+
+Login_Screen --> Homepage_Selection
+
+Homepage_Selection : do:
+Homepage_Selection : have user select homepage
+Homepage_Selection : based on auth level
+
+note left of Homepage_Selection
+    This state is bypassed if users
+    have clearance to view 1 homepage
+    (reduce clicks)
+end note
+
+state fork_state <<fork>>
+Homepage_Selection --> fork_state
+fork_state --> Faculty_Homepage
+fork_state --> Chair_or_Dean_Homepage
+fork_state --> Admin_Homepage
+
+@enduml

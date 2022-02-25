@@ -1,0 +1,16 @@
+@startuml deployment-diagram
+actor User
+node "NGIX Server" as NGIX_SERVER
+node JavaScript
+cloud "AWS DotNet Server" as DotNetServer
+database "Azure Database" as AzureDatabase
+
+User -right- NGIX_SERVER
+
+NGIX_SERVER -right- JavaScript
+
+JavaScript -right- DotNetServer
+
+DotNetServer -right- AzureDatabase
+
+@enduml

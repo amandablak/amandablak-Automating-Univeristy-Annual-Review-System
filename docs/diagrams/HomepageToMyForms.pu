@@ -1,0 +1,12 @@
+@startuml
+actor FacultyUser
+participant AuthMiddleware
+participant HomePage
+participant FormsView
+participant FormsStore
+FacultyUser -> AuthMiddleware: Naviagte to Homepage
+AuthMiddleware -> HomePage: Get authToken
+HomePage -> FormsView: Click My Forms, authToken
+FormsView -> FormsStore: Get My Forms
+FormsView -> FormsView: Render Completed & In Progress Forms
+@enduml

@@ -1,0 +1,19 @@
+@startuml fac-homepage-states
+hide empty description
+
+[*] --> Homepage
+Homepage : do:
+Homepage : Select Next Item
+
+Homepage --> CreateNewForm
+CreateNewForm --> Homepage
+Homepage --> InProgressForm
+InProgressForm --> Homepage
+Homepage --> CompletedForms
+CompletedForms --> Homepage
+Homepage --> Logout
+CreateNewForm --> Logout
+InProgressForm --> Logout
+CompletedForms --> Logout
+
+@enduml

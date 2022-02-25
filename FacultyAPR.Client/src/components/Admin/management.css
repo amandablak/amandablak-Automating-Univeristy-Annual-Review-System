@@ -1,0 +1,54 @@
+.user-management{
+    background-color:white;
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+
+.user-management-child {
+    width: 90%;
+    background-color: #088099;
+    border-radius:5px;
+    margin: 20px;
+}
+
+.edit-buttons{
+    float:left;
+
+}
+
+.new-user{
+    width: 100%;
+}
+
+.mt-2 {
+    border:none;
+    text-align: center;
+    background-color: #088099;
+}
+
+
+
+.btn-delete, .btn-cancel{
+    background-color: #AA0000
+}
+
+
+
+.mt-2-user{
+    border: none;
+    width: 100%;
+    background-color: #088099;
+}
+
+.btn-edit, .btn-new, .btn-upload, .btn-submit{
+    color:#ffffff;
+    background-color: #088099
+}
+
+.user-table{
+    width: 100%;
+}
+

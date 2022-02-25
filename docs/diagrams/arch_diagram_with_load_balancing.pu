@@ -1,0 +1,17 @@
+@startuml
+
+[*] --> LoginFrontend
+LoginFrontend --> AdminFrontend
+LoginFrontend --> ChairFrontend
+LoginFrontend --> FacultyFrontend
+FacultyFrontend --> LoadBalancer
+ChairFrontend --> LoadBalancer
+AdminFrontend --> LoadBalancer
+LoadBalancer --> APRServerN
+APRServerN --> BlobStorage
+APRServerN --> FacultyInfoDB
+APRServerN --> SPOTScoreDB
+APRServerN --> FormStructureDB
+APRServerN: Replicated N times
+
+@enduml

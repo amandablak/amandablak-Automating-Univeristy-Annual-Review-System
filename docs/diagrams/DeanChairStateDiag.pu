@@ -1,0 +1,14 @@
+@startuml
+Review: Display APR form, Review Enabled
+Commenting: Add evaluation comments
+Approved: Send to faculty for acknowledgment 
+Disapproved: Send back to faculty for revision
+SendtoFaculty: Provide feedback to faculty
+[*] --> Review
+Review --> Commenting: Comment on Evaluation
+Commenting --> Approved: Approve APR form
+Commenting --> Disapproved: Disapprove APR form
+Approved --> SendtoFaculty: Send approved form to faculty
+Disapproved --> SendtoFaculty: Send disapproved form to faculty
+SendtoFaculty --> [*]: Send back an evaluated form to Faculty
+@enduml

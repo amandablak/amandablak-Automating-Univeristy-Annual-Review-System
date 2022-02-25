@@ -1,0 +1,13 @@
+@startuml
+
+[*] --> LoginFrontend
+LoginFrontend --> AdminFrontend
+LoginFrontend --> ReviewerFrontend
+LoginFrontend --> FacultyFrontend
+FacultyFrontend --> APRServer
+ReviewerFrontend --> APRServer
+AdminFrontend --> APRServer
+APRServer --> Database
+
+
+@enduml

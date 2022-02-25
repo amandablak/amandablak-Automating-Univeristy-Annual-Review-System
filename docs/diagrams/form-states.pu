@@ -1,0 +1,47 @@
+@startuml form-states
+hide empty description
+
+[*] --> FormCreated
+note on link
+    Faculty member clicks on
+    "Create New Form"
+end note
+FormCreated --> FormEditable
+note on link
+    Form immediately enters
+    editable state, allowing
+    user to start working on
+    the form
+end note
+
+state "Form In Review" as FormInReview {
+    SupervisorReview --> FacultyReview
+    FacultyReview --> SupervisorReview
+    note on link
+        Supervisor and Faculty
+        have conversation about
+        form via Reviews
+    end note
+}
+
+FormEditable --> FormInReview
+note on link
+    Faculty send their forms to
+    their supervisors for review.
+end note
+FormInReview --> FormEditable
+note on link
+    Can renter editable state so
+    faculty can edit based on
+    supervisor review and respond
+    with their thoughts.
+end note
+FormInReview --> FormLocked
+note on link
+    After supervisor approves,
+    form enters into final
+    locked state and cannot
+    be changed.
+end note
+
+@enduml

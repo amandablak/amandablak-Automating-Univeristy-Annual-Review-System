@@ -1,0 +1,13 @@
+@startuml physical-diagram
+actor User
+agent "Web Browser" as Browser
+agent "DNS Servers" as DNS
+agent "SU Servers" as SUS
+agent "Off-premise Servers & Databases" as DB
+
+User -right- Browser
+Browser -right- DNS
+DNS -right- SUS
+SUS -right- DB
+
+@enduml

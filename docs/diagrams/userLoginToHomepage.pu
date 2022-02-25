@@ -1,0 +1,19 @@
+@startuml
+actor FacultyUser
+participant Login
+participant AuthBroker
+participant AdminBroker
+participant FacultyInfoDB
+participant HomePage
+
+FacultyUser -> Login: User accesses login page
+Login -> AuthBroker: Login sends request to Authorization layer with payload
+AuthBroker -> FacultyInfoDB: Auth queries DB for payload
+FacultyInfoDB -> AuthBroker: Searches for hashed / salted auth info (third party reccomended)
+AuthBroker -> Login: Faculty info -> authToken
+Login -> HomePage: authToken
+FacultyUser -> HomePage: User redirected to homepage
+HomePage -> AdminBroker: user scope request
+AdminBroker -> FacultyInfoDB: Faculty Info
+AdminBroker -> HomePage: userScope
+@enduml

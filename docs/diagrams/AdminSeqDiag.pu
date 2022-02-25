@@ -1,0 +1,17 @@
+@startuml
+actor AdminUser
+participant HomePage
+participant AuthMiddleWare
+participant UpdateView
+participant DBMS
+participant ReviewUpdate
+AdminUser -> AuthMiddleWare: Enter Login
+AuthMiddleWare -> AdminUser: Login Success
+AdminUser -> HomePage: Navigte to Homepage
+HomePage ->  UpdateView: Add/Update FacultyInfo
+UpdateView ->ReviewUpdate: Review the update
+ReviewUpdate -> DBMS: Save Update
+DBMS -> UpdateView: Changes Saved
+UpdateView -> AdminUser: FacultyInfo Updated
+UpdateView -> AdminUser :Update Success(Go home,add Another Update)
+@enduml

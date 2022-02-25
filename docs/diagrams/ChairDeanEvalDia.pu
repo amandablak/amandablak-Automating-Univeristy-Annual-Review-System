@@ -1,0 +1,18 @@
+@startuml
+actor Dean_Chair
+participant DeanChairHomePage
+participant AuthMiddleWare
+participant FormsView
+participant CommentForm
+participant FacultyFormFeedback
+Dean_Chair -> AuthMiddleWare: Enter Login
+AuthMiddleWare -> Dean_Chair: Login Success
+Dean_Chair -> DeanChairHomePage: Navigte to Homepage
+DeanChairHomePage ->  FormsView: View Forms to be evaluated
+FormsView ->CommentForm: Add comments on the form
+CommentForm -> FacultyFormFeedback: Send form to faculty for next steps
+FacultyFormFeedback -> Dean_Chair: Form Sent
+FacultyFormFeedback -> DeanChairHomePage: Go back to homepage
+FormsView -> Dean_Chair: Evaluate another form if available
+FormsView -> FormsView : See More Forms to evaluate
+@enduml

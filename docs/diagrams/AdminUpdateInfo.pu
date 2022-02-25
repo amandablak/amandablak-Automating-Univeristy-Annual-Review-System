@@ -1,0 +1,17 @@
+@startuml
+Login: Enter username and pwd
+AdminHomepage: Update database
+UpdateFacultyInfo: Enter Faculty info
+SeeChanges: view new updates
+LoginFailure: Entered wrong login info
+[*] --> Login
+Login --> AdminHomepage: Login Success
+Login --> LoginFailure: Enter login again
+LoginFailure --> AdminHomepage: Login Success
+AdminHomepage --> UpdateFacultyInfo: Update faculty Info
+UpdateFacultyInfo --> SeeChanges: Confirm changes
+SeeChanges --> AdminHomepage: Revise changes
+UpdateFacultyInfo --> [*]:Logout
+AdminHomepage --> [*]:Logout
+SeeChanges --> [*]: Logout
+@enduml

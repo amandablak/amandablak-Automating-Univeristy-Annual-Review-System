@@ -1,0 +1,16 @@
+
+.tabs-forms{
+    margin-top: 5%;
+    align-items: center
+}
+
+.mt-2 {
+  color:#ffffff;
+  background-color: #088099;     
+}
+
+.tab-button{
+  background-color: #088099;
+  color:#ffffff;
+  margin: 5px; 
+}

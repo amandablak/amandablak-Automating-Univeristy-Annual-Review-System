@@ -1,0 +1,21 @@
+@startuml
+actor FacultyUser
+participant HomePage
+participant AuthMiddleware
+participant FormView
+participant FacultyInfoDB
+participant SPOTScoreDB
+participant FormStructureDB
+participant FormStore
+
+FacultyUser -> AuthMiddleware: Get authtoken
+FacultyUser -> HomePage: Fill out form
+HomePage -> FormView: Load Form
+FormView -> FacultyInfoDB: Get faculty Info
+FormView -> SPOTScoreDB: Get faculty scores
+FormView -> FormStructureDB: Get structure based on fac position
+FormView -> FormView: Render Form
+FacultyUser -> FormView: Save Form
+FormView -> FormStore: Save Completed Form / Draft. Save Form State
+
+@enduml

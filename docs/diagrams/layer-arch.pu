@@ -1,0 +1,12 @@
+@startuml layer-arch
+hide empty description
+
+state "Client Webapp on Browser" as Client
+state "Login, Role-checking, Data Validation" as Server1
+state "APR Form Viewing and Editing, CV Upload, View Faculty Info, Export Form" as Server2
+state "Faculty Info Database, SPOT Scores, Form Structure Database" as Databases
+
+Client -down-> Server1
+Server1 -down-> Server2
+Server2 -down-> Databases
+@enduml

@@ -1,0 +1,25 @@
+.user-profiles {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width:100%;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+}
+
+.mt-2-user{
+    color:#ffffff;
+    background-color: #088099;
+    width:200px;
+    padding: 20px;
+    margin-top: 4%;
+    font-weight: bold;
+}
+
+.mt-2{
+    color:#ffffff;
+    background-color: #088099;  
+}
