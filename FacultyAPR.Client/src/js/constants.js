@@ -1,0 +1,6 @@
+export const FORMSTRUCTURE_BASE_URL = 'FormStructure'
+export const FORMCONTENT_BASE_URL = 'FormContent'
+export const USER_BASE_URL = 'User'
+export const REVIEW_BASE_URL = 'Review'
+export const USER_MANAGEMENT_BASE_URL = 'UserManagement'
+export const FILE_UPLOAD_BASE_URL = 'FileUpload'

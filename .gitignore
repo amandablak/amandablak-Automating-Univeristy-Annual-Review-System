@@ -1,0 +1,62 @@
+# .Net
+out
+*.orig
+bin
+obj
+.idea
+.vs
+.vscode
+*.sln
+
+# .JS
+# dependencies
+*/node_modules
+/node_modules
+*/.pnp
+.pnp.js
+*.eslintcache
+
+# testing
+FacultyAPR.Client/coverage
+
+# production
+FacultyAPR.Client/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.eslintcache
+FacultyAPR.Client/.eslintcache
+FacultyAPR.API/appsettings.json
+lib/FacultyAPR.Models/BuisnessObjects/Database/test.sql
+lib/FacultyAPR.Storage.Sql.Integration.Tests/config.json
+*.json
+*.json
+lib/FacultyAPR.Models/BuisnessObjects/Database/test.sql
+FacultyAPR.API/appsettings.json
+lib/FacultyAPR.Models/BuisnessObjects/Database/test.sql
+lib/FacultyAPR.Storage.Sql.Integration.Tests/config.json
+lib/FacultyAPR.Models/BuisnessObjects/Database/test.sql
+lib/FacultyAPR.Storage.Sql.Integration.Tests/config.json
+.metals/metals.lock.db
+<<<<<<< HEAD
+.ionide/symbolCache.db
+=======
+.ionide
+<<<<<<< HEAD
+.ionide/symbolCache.db
+<<<<<<< HEAD
+>>>>>>> 285c4a2b34ce3b70583863a283ce9c21c454003c
+=======
+>>>>>>> eff600319005244aba653c83ad05ee0b6627fd44
+=======
+.ionide/symbolCache.db
+>>>>>>> 7f824d6c150461c37d3e58bb413fe34717e9902d
